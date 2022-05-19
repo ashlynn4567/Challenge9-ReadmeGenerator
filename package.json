@@ -1,0 +1,23 @@
+{
+  "name": "static-site",
+  "version": "1.0.0",
+  "description": "This is my ninth challenge assignment for the University of Oregon Coding Bootcamp 2022. The challenge is to create an application using Node.js that gathers user input to generate a professional README for their GitHub Repository.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^6.3.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashlynn4567/Readme-Generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ashlynn4567/Readme-Generator/issues"
+  },
+  "homepage": "https://github.com/ashlynn4567/Readme-Generator#readme"
+}
