@@ -1,9 +1,3 @@
-console.log("Hello");
-
-const readmeDataArr = process.argv.slice(2, process.argv.length);
-const printReadmeData = readmeDataArr => console.log(readmeDataArr);
-printReadmeData(readmeDataArr);
-
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
@@ -13,7 +7,21 @@ const generateMarkdown = require("./utils/generateMarkdown");
 const questions = [];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {};
+const writeToFile = (fileContent) => {
+    return new Promise ((resolve, reject) => {
+        fs.writeFile("dist/README.md", fileContent, err => {
+            if (err) {
+                reject(err);
+                return;
+            };
+
+            resolve({
+                ok: true, 
+                message: "README complete! Check out dist/README.md to see the output!"
+            });
+        }); 
+    });
+};
 
 // TODO: Create a function to initialize app
 function init() {
@@ -35,12 +43,6 @@ function init() {
         githubUsername: "ashlynn4567",
         linkedInProfile: "https://www.linkedin.com/in/ashley-lynn-smith/"
     };
-
-    fs.writeFile("dist/README.md", writeToFile(fileName, data), err => {
-        if (err) throw err;
-
-        console.log("README complete! Check out dist/README.md to see the output!");
-    });
 };
 
 // Function call to initialize app
