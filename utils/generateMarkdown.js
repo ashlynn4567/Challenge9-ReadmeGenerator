@@ -18,10 +18,10 @@ function generateMarkdown(data) {
   ## Table-of-Contents
 
   * [Description](#description)
-  * [Installation](#installation)
-  * [Usage and Features](#usage-and-features)
-  * [Technologies and Languages](#technologies-and-languages)
   * [Deployed Site](#deployed-site)
+  * [Features](#usage-and-features)
+  * [Installation](#installation)
+  * [Technologies and Languages](#technologies-and-languages)
   * [Future Development](#future-development)
   * [Credits](#credits)
 
@@ -29,19 +29,23 @@ function generateMarkdown(data) {
 
   ${data.description}
 
+  ## Deployed Site
+
+  Follow this [link](${data.deployedSite}) to view and use our site!
+
+  ## Features
+
+  // loop
+  ${data.featureDescription}
+
+  <p align="center">
+  <img alt="${data.featureImgAltText}" src="./dist/images/${data.featureImgFileName}"/>
+  </p>    
+  // end loop
+
   ## Installation
 
   ${data.installation}
-
-  ## Usage and Features
-
-  // loop
-  ${data.feature.description}
-
-  <p align="center">
-  <img alt="${data.feature.img.altText}" src="./dist/images/${data.feature.img.fileName}"/>
-  </p>    
-  // end loop
 
   ## Technologies and Languages
 
@@ -55,10 +59,6 @@ function generateMarkdown(data) {
   - [bcrypt](https://www.npmjs.com/package/bcrypt)
   - [Handlebars.js](https://handlebarsjs.com/)
   - [Heroku](https://www.heroku.com/)
-
-  ## Deployed Site
-
-  Follow this [link](${data.deployedSite}) to view and use our site!
 
   ## Future Development
 
