@@ -74,6 +74,10 @@ function generateMarkdown(data) {
   - <a href="https://github.com/${data.githubUsername}">GitHub</a>
   - <a href="${data.linkedInProfile}">LinkedIn</a>
 
+  ## Licensing
+
+  This application is covered under the following license: []()
+
   ## Credits
 
   This project was built with the help of the University of Oregon's Coding Boot Camp.`;

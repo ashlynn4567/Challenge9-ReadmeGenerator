@@ -2,9 +2,71 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
+const { title } = require("process");
 
 // TODO: Create an array of questions for user input
-const questions = [];
+const questions = [
+    // title
+    {
+        type: "input",
+        name: "title", 
+        message: "Please enter the title of your project.", 
+        validate: (titleInput) => {
+            if (titleInput) {
+                return true;
+            } else {
+                console.log("You must enter a title to continue.");
+                return false;
+            };
+        },
+    },
+    // description
+    {
+        description: ""
+    },
+    // installation instructions
+    {
+        installation: ""
+    },
+    // usage and features
+    {
+        feature: {
+            description: "", 
+            img: {
+                altText: "",
+                fileName: ""
+            }, 
+        }
+    }, 
+    // technologies and languages used
+    {
+        technologiesChoice: ""
+    },
+    // deployed site
+    {
+        deployedSite: ""
+    }, 
+    // future development
+    {
+        suggestedFeature: ""
+    },
+    // licensing 
+    {
+        license: ""
+    },
+    // email
+    {
+        email: ""
+    }, 
+    // github 
+    {
+        githubUsername: ""
+    }, 
+    // linkedIn
+    {
+        linkedInProfile: ""
+    }
+];
 
 // TODO: Create a function to write README file
 const writeToFile = (fileContent) => {
@@ -25,24 +87,11 @@ const writeToFile = (fileContent) => {
 
 // TODO: Create a function to initialize app
 function init() {
-    const fileName = "README.md";
-    const data = {
-        title: "Password Generator", 
-        description: "With our new password generator app, you'll have the ability to create randomized passwords by inputting your password specifications. Need a password including capitol letters? Special Characters? We've got you covered!",
-        installation: "",
-        feature: {
-            description: "This is how the app appears to users. It is responsive, adapting to multiple screen sizes.",
-            img: {
-                altText: "Screenshot of the homepage, showing a box where the generated password will appear and a button below it.",
-                fileName: "homepage.jpg"
-            },
-        }, 
-        deployedSite: "https://github.com/ashlynn4567/Password-Generator", 
-        suggestedFeature: "The user will have the option to customize which special characters they would like to include in the password generator.",
-        email: "ashlynn4567@gmail.com", 
-        githubUsername: "ashlynn4567",
-        linkedInProfile: "https://www.linkedin.com/in/ashley-lynn-smith/"
-    };
+    return inquirer
+        .prompt(questions)
+        .then((promptAnswers) => {
+            return promptAnswers;
+        });
 };
 
 // Function call to initialize app
