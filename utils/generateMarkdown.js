@@ -58,8 +58,75 @@ function renderLicenseSection(license) {
   };
 };
 
-// add handler to render techologies in markdown
-// code goes here
+// Create a function that returns the license link
+// If there is no license, return an empty string
+function renderTechologiesAndLanguagesLink(technologiesChoice) {
+  for (i = 0; i <technologiesChoice.length; i++) {
+    if (technologiesChoice[i] === "HTML") {
+      return `https://developer.mozilla.org/en-US/docs/Web/HTML`;
+    } else if (technologiesChoice[i] === "CSS") {
+      return `https://developer.mozilla.org/en-US/docs/Web/CSS`;
+    } else if (technologiesChoice[i] === "JavaScript") {
+      return `https://www.javascript.com/`;
+    } else if (technologiesChoice[i] === "Node.js") {
+      return `https://nodejs.org/en/`;
+    } else if (technologiesChoice[i] === "npm") {
+      return `https://www.npmjs.com/`;
+    } else if (technologiesChoice[i] === "Jest") {
+      return `https://jestjs.io/`;
+    } else if (technologiesChoice[i] === "SQL") {
+      return `https://en.wikipedia.org/wiki/SQL`;
+    } else if (technologiesChoice[i] === "MySQL") {
+      return `https://www.mysql.com/downloads/`;
+    } else if (technologiesChoice[i] === "Sequelize.js") {
+      return `https://sequelize.org/`;
+    } else if (technologiesChoice[i] === "NoSQL") {
+      return `https://en.wikipedia.org/wiki/NoSQL`;
+    } else if (technologiesChoice[i] === "MongoDB") {
+      return `https://www.mongodb.com/`;
+    } else if (technologiesChoice[i] === "Mongoose.js") {
+      return `https://mongoosejs.com/`;
+    } else if (technologiesChoice[i] === "Python") {
+      return `https://www.python.org/`;
+    } else if (technologiesChoice[i] === "Java") {
+      return `https://www.java.com/en/`;
+    } else if (technologiesChoice[i] === "C / C++") {
+      return `https://www.cplusplus.com/`;
+    } else if (technologiesChoice[i] === "C#") {
+      return `https://en.wikipedia.org/wiki/C_Sharp_(programming_language)`;
+    } else if (technologiesChoice[i] === "R") {
+      return `https://www.r-project.org/`;
+    } else if (technologiesChoice[i] === "Ruby") {
+      return `https://www.ruby-lang.org/en/`;
+    } else if (technologiesChoice[i] === "Go / Golang") {
+      return `https://go.dev/`;
+    } else if (technologiesChoice[i] === "PHP") {
+      return `https://www.php.net/`;
+    } else if (technologiesChoice[i] === "Swift") {
+      return `https://www.swift.com/`;
+    } else if (technologiesChoice[i] === "Rust") {
+      return `https://www.rust-lang.org/`;
+    } else if (technologiesChoice[i] === "Go") {
+      return `https://www.boost.org/LICENSE_1_0.txt`;
+    } else {
+      return "";
+    };
+  };
+};
+
+// Create a function that returns the techology and language section of README
+// If there is no techology and language section, return an empty string
+function renderTechologiesAndLanguagesSection(technologiesChoice) {
+  if (technologiesChoice !== "None listed here") {
+    return `
+    ## Technologies and Languages
+
+    - [${technologiesChoice}](${renderTechologiesAndLanguagesLink(technologiesChoice)})
+    `;
+  } else {
+    return "";
+  };
+};
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {

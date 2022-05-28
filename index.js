@@ -60,6 +60,7 @@ const introQuestions = [
 const featureQuestions = [
     // features section confirm
     {
+        when: ({ confirmAdditionalFeature }) => confirmAdditionalFeature,
         type: "confirm",
         name: "confirmFeature",
         message: "Do you want to showcase a feature of your application in a 'Features' section?",
@@ -155,8 +156,9 @@ const usageQuestions = [
             "JavaScript", 
             "Node.js",
             "npm", 
-            "Testing framework like Jest or Mocha",
+            "Jest",
             "SQL",
+            "MySQL",
             "Sequelize.js",
             "NoSQL",
             "MongoDB",
@@ -167,11 +169,10 @@ const usageQuestions = [
             "C#",
             "R",
             "Ruby",
-            "Golang",
             "PHP",
             "Swift",
-            "Rust",
-            "Go"
+            "Rust", 
+            "Go / Golang"
         ],
         validate: (technologiesChoice) => {
             if (technologiesChoice) {
@@ -209,18 +210,24 @@ const futureDevelopmentQuestions = [
 ];
 
 const creditsQuestions = [
-    // // email
-    // {
-    //     email: ""
-    // }, 
-    // // github 
-    // {
-    //     githubUsername: ""
-    // }, 
-    // // linkedIn
-    // {
-    //     linkedInProfile: ""
-    // },
+    // email
+    {
+        type: "input",
+        name: "email",
+        message: "Please enter your email address for the contact information section."
+    }, 
+    // github 
+    {
+        type: "input",
+        name: "githubUsername",
+        message: "Please enter your GitHub Username for the contact information section."
+    }, 
+    // linkedIn
+    {
+        type: "input",
+        name: "linkedInProfile",
+        message: "Please enter your GitHub Username for the contact information section."
+    },
     // licensing 
     {
         type: "list",
@@ -261,11 +268,24 @@ function init() {
     return inquirer
         .prompt(introQuestions)
         // loop through other questions as neccessary 
-        // code goes here
-        .then((promptAnswers) => {
-            return promptAnswers;
-        });
+        .prompt(featureQuestions)
+        .prompt(usageQuestions)
+        .prompt(futureDevelopmentQuestions)
+        .prompt(creditsQuestions);
 };
 
 // Function call to initialize app
-init();
+init()
+    // .then((promptAnswers) => {
+    //     console.log(promptAnswers);
+    //     return generateMarkdown(promptAnswers);
+    // })
+    // .then((readmeMarkdown) => {
+    //     return writeToFile(readmeMarkdown);
+    // })
+    // .then((writeToFileResponse) => {
+    //     console.log(writeToFileResponse);
+    // })
+    // .catch((err) => {
+    //     console.log(err);
+    // });
