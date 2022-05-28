@@ -33,10 +33,28 @@ const introQuestions = [
             };
         }
     },
-    // // deployed site
-    // {
-    //     deployedSite: ""
-    // }, 
+    // deployed site confirm
+    {
+        type: "confirm",
+        name: "confirmDeployedSite",
+        message: "Is your application deployed to a website?",
+        default: true
+    },
+    // deployed site
+    {
+        when: ({ confirmDeployedSite }) => confirmDeployedSite,
+        type: "input",
+        name: "deployedSite", 
+        message: "Please enter the link to your deployed application. (Required)", 
+        validate: (deployedSite) => {
+            if (deployedSite) {
+                return true;
+            } else {
+                console.log("You must enter a description to continue.");
+                return false;
+            };
+        }
+    }
 ];
 
 const featureQuestions = [
@@ -125,10 +143,45 @@ const usageQuestions = [
             };
         }
     },
-    // // technologies and languages used
-    // {
-    //     technologiesChoice: ""
-    // }
+    // technologies and languages used
+    {
+        type: "list",
+        name: "technologiesChoice",
+        message: "Select the tecnologies or languages you used for this project as applicable. (Required)",
+        choices: [
+            "None listed here", 
+            "HTML",
+            "CSS",
+            "JavaScript", 
+            "Node.js",
+            "npm", 
+            "Testing framework like Jest or Mocha",
+            "SQL",
+            "Sequelize.js",
+            "NoSQL",
+            "MongoDB",
+            "Mongoose.js",
+            "Python",
+            "Java",
+            "C / C++",
+            "C#",
+            "R",
+            "Ruby",
+            "Golang",
+            "PHP",
+            "Swift",
+            "Rust",
+            "Go"
+        ],
+        validate: (technologiesChoice) => {
+            if (technologiesChoice) {
+                return true;
+            } else {
+                console.log("You must enter at least one tool or language choice to continue.");
+                return false;
+            };
+        }
+    }
 ];
 
 const futureDevelopmentQuestions = [
@@ -168,10 +221,22 @@ const creditsQuestions = [
     // {
     //     linkedInProfile: ""
     // },
-    // // licensing 
-    // {
-    //     license: ""
-    // }
+    // licensing 
+    {
+        type: "list",
+        name: "license",
+        message: "Select the license for your project.",
+        choices: [
+            "No license",
+            "GNU AGPLv3",
+            "GNU GPLv3",
+            "GNU LGPLv3",
+            "Mozilla",
+            "MIT",
+            "Apache",
+            "Boost"            
+        ],
+    }
 ];
 
 // TODO: Create a function to write README file
@@ -195,6 +260,8 @@ const writeToFile = (fileContent) => {
 function init() {
     return inquirer
         .prompt(introQuestions)
+        // loop through other questions as neccessary 
+        // code goes here
         .then((promptAnswers) => {
             return promptAnswers;
         });
