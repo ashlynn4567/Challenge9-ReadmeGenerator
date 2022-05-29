@@ -1,57 +1,55 @@
 // Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license === "GNU AGPLv3") {
-    return "[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)";
-  } else if (license === "GNU GPLv3") {
-    return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
-  } else if (license === "GNU LGPLv3") {
-    return "[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)";
-  } else if (license === "Mozilla") {
-    return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
-  } else if (license === "MIT") {
-    return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
-  } else if (license === "Apache") {
-    return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
-  } else if (license === "Boost") {
-    return "[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)";
-  } else {
-    return "";
+  switch (license) {
+    case "GNU AGPLv3":
+      return `[![License: ${license}](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)`;
+    case "GNU GPLv3":
+      return `[![License: ${license}](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
+    case "GNU LGPLv3":
+      return `[![License: ${license}](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)`;
+    case "Mozilla":
+      return `[![License: ${license}](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`;
+    case "MIT":
+      return `[![License: ${license}](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+    case "Apache":
+      return `[![License: ${license}](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
+    case "Boost":
+      return `[![License: ${license}](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)`;
+    default: return "";
   };
 };
 
 // Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license === "GNU AGPLv3") {
-    return `https://www.gnu.org/licenses/agpl-3.0`;
-  } else if (license === "GNU GPLv3") {
-    return `https://www.gnu.org/licenses/gpl-3.0`;
-  } else if (license === "GNU LGPLv3") {
-    return `https://www.gnu.org/licenses/lgpl-3.0`;
-  } else if (license === "Mozilla") {
-    return `https://opensource.org/licenses/MPL-2.0`;
-  } else if (license === "MIT") {
-    return `https://opensource.org/licenses/MIT`;
-  } else if (license === "Apache") {
-    return `https://opensource.org/licenses/Apache-2.0`;
-  } else if (license === "Boost") {
-    return `https://www.boost.org/LICENSE_1_0.txt`;
-  } else {
-    return "";
+  switch (license) {
+    case "GNU AGPLv3":
+      return `https://www.gnu.org/licenses/agpl-3.0`;
+    case "GNU GPLv3":
+      return `https://www.gnu.org/licenses/gpl-3.0`;
+    case "GNU LGPLv3":
+      return `https://www.gnu.org/licenses/lgpl-3.0`;
+    case "Mozilla":
+      return `https://opensource.org/licenses/MPL-2.0`;
+    case "MIT":
+      return `https://opensource.org/licenses/MIT`;
+    case "Apache":
+      return `https://opensource.org/licenses/Apache-2.0`;
+    case "Boost":
+      return `https://www.boost.org/LICENSE_1_0.txt`;
+    default: return "";
   };
 };
 
 // Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license !== "No license") {
+  if (license !== "") {
     return `
   ## Licensing 
 
-  The application is covered under the following license: [${license}](${renderLicenseLink(
-      license
-    )})
+  The application is covered under the following license: [${license}](${renderLicenseLink(license)})
     `;
   } else {
     return "";
@@ -61,56 +59,54 @@ function renderLicenseSection(license) {
 // Create a function that returns the license link
 // If there is no license, return an empty string
 function renderTechologiesAndLanguagesLink(technologiesChoice) {
-  for (i = 0; i <technologiesChoice.length; i++) {
-    if (technologiesChoice[i] === "HTML") {
+  switch (technologiesChoice) {
+    case "HTML":
       return `https://developer.mozilla.org/en-US/docs/Web/HTML`;
-    } else if (technologiesChoice[i] === "CSS") {
+    case "CSS":
       return `https://developer.mozilla.org/en-US/docs/Web/CSS`;
-    } else if (technologiesChoice[i] === "JavaScript") {
+    case "JavaScript":
       return `https://www.javascript.com/`;
-    } else if (technologiesChoice[i] === "Node.js") {
+    case "Node.js":
       return `https://nodejs.org/en/`;
-    } else if (technologiesChoice[i] === "npm") {
+    case "npm":
       return `https://www.npmjs.com/`;
-    } else if (technologiesChoice[i] === "Jest") {
+    case "Jest":
       return `https://jestjs.io/`;
-    } else if (technologiesChoice[i] === "SQL") {
-      return `https://en.wikipedia.org/wiki/SQL`;
-    } else if (technologiesChoice[i] === "MySQL") {
+    case "SQL":
       return `https://www.mysql.com/downloads/`;
-    } else if (technologiesChoice[i] === "Sequelize.js") {
+    case "MySQL":
+      return `https://www.mysql.com/downloads/`;
+    case "Sequelize.js":
       return `https://sequelize.org/`;
-    } else if (technologiesChoice[i] === "NoSQL") {
+    case "NoSQL":
       return `https://en.wikipedia.org/wiki/NoSQL`;
-    } else if (technologiesChoice[i] === "MongoDB") {
+    case "MongoDB":
       return `https://www.mongodb.com/`;
-    } else if (technologiesChoice[i] === "Mongoose.js") {
+    case "Mongoose.js":
       return `https://mongoosejs.com/`;
-    } else if (technologiesChoice[i] === "Python") {
+    case "Python":
       return `https://www.python.org/`;
-    } else if (technologiesChoice[i] === "Java") {
+    case "Java":
       return `https://www.java.com/en/`;
-    } else if (technologiesChoice[i] === "C / C++") {
+    case "C / C++":
       return `https://www.cplusplus.com/`;
-    } else if (technologiesChoice[i] === "C#") {
+    case "C#":
       return `https://en.wikipedia.org/wiki/C_Sharp_(programming_language)`;
-    } else if (technologiesChoice[i] === "R") {
+    case "R":
       return `https://www.r-project.org/`;
-    } else if (technologiesChoice[i] === "Ruby") {
+    case "Ruby":
       return `https://www.ruby-lang.org/en/`;
-    } else if (technologiesChoice[i] === "Go / Golang") {
+    case "Go / Golang":
       return `https://go.dev/`;
-    } else if (technologiesChoice[i] === "PHP") {
+    case "PHP":
       return `https://www.php.net/`;
-    } else if (technologiesChoice[i] === "Swift") {
+    case "Swift":
       return `https://www.swift.com/`;
-    } else if (technologiesChoice[i] === "Rust") {
+    case "Rust":
       return `https://www.rust-lang.org/`;
-    } else if (technologiesChoice[i] === "Go") {
+    case "Go":
       return `https://www.boost.org/LICENSE_1_0.txt`;
-    } else {
-      return "";
-    };
+    default: return "";
   };
 };
 
@@ -167,18 +163,7 @@ function generateMarkdown(data) {
 
   ${data.installation}
 
-  ## Technologies and Languages
-
-  - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-  - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-  - [Node.js](https://nodejs.org/en/)
-  - [Express.js](https://www.npmjs.com/package/express)
-  - [mySQL2](https://www.npmjs.com/package/mysql2)
-  - [Sequelize.js](https://sequelize.org/)
-  - [dotenv](https://www.npmjs.com/package/dotenv)
-  - [bcrypt](https://www.npmjs.com/package/bcrypt)
-  - [Handlebars.js](https://handlebarsjs.com/)
-  - [Heroku](https://www.heroku.com/)
+  ${renderTechologiesAndLanguagesSection(data.technologiesChoice)}
 
   ## Future Development
 

@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+// Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
 
-// TODO: Create an array of questions for user input
+// Create an array of questions for user input
 const introQuestions = [
     // title
     {
@@ -54,18 +54,17 @@ const introQuestions = [
                 return false;
             };
         }
-    }
-];
-
-const featureQuestions = [
+    },
     // features section confirm
     {
-        when: ({ confirmAdditionalFeature }) => confirmAdditionalFeature,
         type: "confirm",
         name: "confirmFeature",
         message: "Do you want to showcase a feature of your application in a 'Features' section?",
         default: true
-    },
+    }
+];
+
+const featureQuestions = [
     // feature description
     {
         when: ({ confirmFeature }) => confirmFeature,
@@ -146,6 +145,7 @@ const usageQuestions = [
     },
     // technologies and languages used
     {
+        // NOTE TODO: WANT TO MAKE THIS SO THAT USERS ARE ABLE TO SELECT MULTIPLE. THE FUNCTION IN GENERATEMARKDOWN.JS SHOULD ALSO RETURN MULTPLE ANSWERS
         type: "list",
         name: "technologiesChoice",
         message: "Select the tecnologies or languages you used for this project as applicable. (Required)",
@@ -182,17 +182,17 @@ const usageQuestions = [
                 return false;
             };
         }
-    }
-];
-
-const futureDevelopmentQuestions = [
-    // future development section confirm
+    },
     {
         type: "confirm",
         name: "confirmFutureDevelopment",
         message: "Do you want to include a 'Future Development' section to showcase suggestions for future improvement of this application?",
         default: true
-    },
+    }
+];
+
+const futureDevelopmentQuestions = [
+    // future development section confirm
     {
         when: ({ confirmFutureDevelopment }) => confirmFutureDevelopment,
         type: "input",
@@ -234,7 +234,6 @@ const creditsQuestions = [
         name: "license",
         message: "Select the license for your project.",
         choices: [
-            "No license",
             "GNU AGPLv3",
             "GNU GPLv3",
             "GNU LGPLv3",
@@ -246,7 +245,7 @@ const creditsQuestions = [
     }
 ];
 
-// TODO: Create a function to write README file
+// Create a function to write README file
 const writeToFile = (fileContent) => {
     return new Promise ((resolve, reject) => {
         fs.writeFile("dist/README.md", fileContent, err => {
@@ -263,19 +262,20 @@ const writeToFile = (fileContent) => {
     });
 };
 
-// TODO: Create a function to initialize app
+// Create a function to initialize app
 function init() {
     return inquirer
         .prompt(introQuestions)
-        // loop through other questions as neccessary 
-        .prompt(featureQuestions)
-        .prompt(usageQuestions)
-        .prompt(futureDevelopmentQuestions)
-        .prompt(creditsQuestions);
+        // // use logic from now on as we defined in our logic tree
+        // .prompt(featureQuestions)
+        // .prompt(usageQuestions)
+        // .prompt(futureDevelopmentQuestions)
+        // .prompt(creditsQuestions);
 };
 
+
 // Function call to initialize app
-init()
+init();
     // .then((promptAnswers) => {
     //     console.log(promptAnswers);
     //     return generateMarkdown(promptAnswers);
