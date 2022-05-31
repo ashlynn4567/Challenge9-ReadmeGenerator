@@ -5,23 +5,6 @@ const prompts = require("./utils/helpers");
 const helpers = require("./utils/helpers");
 const generateMarkdown = require("./utils/generateMarkdown");
 
-// Create a function to write README file
-const writeToFile = (fileContent) => {
-    return new Promise ((resolve, reject) => {
-        fs.writeFile("dist/README.md", fileContent, err => {
-            if (err) {
-                reject(err);
-                return;
-            };
-
-            resolve({
-                ok: true, 
-                message: "README complete! Check out dist/README.md to see the output!"
-            });
-        }); 
-    });
-};
-
 // Create a function to initialize app
 async function init() {
     let userInput = {
@@ -63,8 +46,25 @@ async function init() {
             prompts.creditSection
         ),
     };
+    return userInput;
 };
 
+// Create a function to write README file
+const writeToFile = (fileContent) => {
+    return new Promise ((resolve, reject) => {
+        fs.writeFile("dist/README.md", fileContent, err => {
+            if (err) {
+                reject(err);
+                return;
+            };
+
+            resolve({
+                ok: true, 
+                message: "README complete! Check out dist/README.md to see the output!"
+            });
+        }); 
+    });
+};
 
 // Function call to initialize app
 init().then(writeToFile(userInput));

@@ -5,7 +5,7 @@ function generateMarkdown(data) {
   return `
   # ${data.title}
 
-  ${renderLicenseBadge(data.license)}
+  ${helpers.renderLicenseBadge(data.license)}
 
   ## Table-of-Contents
 
@@ -39,7 +39,7 @@ function generateMarkdown(data) {
 
   ${data.installation}
 
-  ${renderTechologySection(data.technologiesChoice)}
+  ${helpers.renderTechologySection(data.technologiesChoice)}
 
   ## Future Development
 
@@ -59,7 +59,7 @@ function generateMarkdown(data) {
 
   This project was built with the help of the University of Oregon's Coding Boot Camp.
 
-  ${renderLicenseSection(data.license)}`;
+  ${helpers.renderLicenseSection(data.license)}`;
 };
 
 module.exports = generateMarkdown;
