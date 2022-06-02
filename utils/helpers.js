@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");
+const prompts = require("./prompts");
 
 function insertTitleLines (title) {
     console.log("");
@@ -8,7 +9,7 @@ function insertTitleLines (title) {
 };
 
 async function askQuestions (title = "", prompts = [], multiplePrompts = []) {
-    return await this.inquire(title, prompts)
+    return await inquirer.prompt(title, prompts)
         .then(async (response) => {
             // create empty answers object to be filled with user input 
             let answers = {};

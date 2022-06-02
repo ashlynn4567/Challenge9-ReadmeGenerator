@@ -1,5 +1,4 @@
 // Include packages needed for this application
-const inquirer = require("inquirer");
 const fs = require("fs");
 const prompts = require("./utils/helpers");
 const helpers = require("./utils/helpers");
@@ -51,6 +50,7 @@ async function init() {
 
 // Create a function to write README file
 const writeToFile = (fileContent) => {
+    console.log(fileContent);
     return new Promise ((resolve, reject) => {
         fs.writeFile("dist/README.md", fileContent, err => {
             if (err) {
@@ -67,4 +67,6 @@ const writeToFile = (fileContent) => {
 };
 
 // Function call to initialize app
-init().then(writeToFile(userInput));
+init().then((userData) => {
+    writeToFile(userData);
+});
