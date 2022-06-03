@@ -1,5 +1,4 @@
 const inquirer = require("inquirer");
-const prompts = require("./prompts");
 
 function insertTitleLines (title) {
     console.log("");
@@ -9,10 +8,10 @@ function insertTitleLines (title) {
 };
 
 async function askQuestions (title = "", prompts = [], multiplePrompts = []) {
-    return await inquirer.prompt(title, prompts)
+    return inquirerHandler(title, prompts)
         .then(async (response) => {
             // create empty answers object to be filled with user input 
-            let answers = {};
+            let answers = { ...response };
 
             // only enter if "enterMultiples" question is true AND multiplePrompts.length > 0
             if (response.enterMultiples && multiplePrompts.length > 0) {
@@ -31,7 +30,7 @@ async function askQuestions (title = "", prompts = [], multiplePrompts = []) {
                 // loop through prompts
                 while (loop) {
                     // ask prompt question
-                    let answers = await this.inquire(
+                    let answers = await inquirerHandler(
                         `${title} ${list.length + 1}`,
                         allPrompts
                     )
@@ -61,48 +60,76 @@ async function inquirerHandler (title="", prompts = []) {
         .then((response) => response);
 };
 
+const licences = {
+    "GNU AGPLv3": {
+        link: "https://www.gnu.org/licenses/agpl-3.0",
+        badge: "[![License: GNU AGPLv3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)"
+    }, 
+    "GNU GPLv3": {
+        link: "https://www.gnu.org/licenses/gpl-3.0",
+        badge: "[![License: GNU GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)"
+    }, 
+    "GNU LGPLv3": {
+        link: "https://www.gnu.org/licenses/lgpl-3.0",
+        badge: "[![License: GNU LGPLv3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)"
+    }, 
+    "Mozilla": {
+        link: "https://opensource.org/licenses/MPL-2.0",
+        badge: "[![License: Mozilla](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)"
+    }, 
+    "MIT": {
+        link: "https://opensource.org/licenses/MIT",
+        badge: "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+    }, 
+    "Apache": {
+        link: "https://opensource.org/licenses/Apache-2.0",
+        badge: "[![License: Apache](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+    }, 
+    "Boost": {
+        link: "https://www.boost.org/LICENSE_1_0.txt",
+        badge: "[![License: Boost](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)"
+    }
+};
+
 // Create a function that returns a license badge based on which license is passed in. If there is no license, return an empty string */
 function renderLicenseBadge(license) {
-    switch (license) {
-      case "GNU AGPLv3":
-        return `[![License: ${license}](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)`;
-      case "GNU GPLv3":
-        return `[![License: ${license}](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
-      case "GNU LGPLv3":
-        return `[![License: ${license}](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)`;
-      case "Mozilla":
-        return `[![License: ${license}](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`;
-      case "MIT":
-        return `[![License: ${license}](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-      case "Apache":
-        return `[![License: ${license}](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
-      case "Boost":
-        return `[![License: ${license}](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)`;
-      default: return "";
+    if (license) {
+        return licences[license].badge;
+    } else {
+       return ""; 
     };
 };
   
 // Create a function that returns the license link. If there is no license, return an empty string
 function renderLicenseLink(license) {
-    switch (license) {
-        case "GNU AGPLv3":
-        return `https://www.gnu.org/licenses/agpl-3.0`;
-        case "GNU GPLv3":
-        return `https://www.gnu.org/licenses/gpl-3.0`;
-        case "GNU LGPLv3":
-        return `https://www.gnu.org/licenses/lgpl-3.0`;
-        case "Mozilla":
-        return `https://opensource.org/licenses/MPL-2.0`;
-        case "MIT":
-        return `https://opensource.org/licenses/MIT`;
-        case "Apache":
-        return `https://opensource.org/licenses/Apache-2.0`;
-        case "Boost":
-        return `https://www.boost.org/LICENSE_1_0.txt`;
-        default: return "";
+    if (license) {
+        return licences[license].link;
+    } else {
+       return "";
     };
 };
-  
+
+/* 
+
+    const licenses = {
+        "GNU AGPLv3": {
+            link: 'https://www.gnu.org/licenses/agpl-3.0',
+            badge: '[![License: GNU AGPLv3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)'
+        },
+        gnu_agpLv3: {
+
+        }
+
+        // ... repeat for all the licenses
+    }
+
+    licence["GNU APGLv3"].link
+    license["GNU APGLv3"].badge
+
+*/
+
+
+
 // Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
