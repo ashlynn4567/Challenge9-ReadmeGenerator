@@ -6,55 +6,47 @@
 ## Table-of-Contents
 
 * [Description](#description)
-* [Deployed Site](#deployed-site)
+
 * [Features](#features)
 * [Installation](#installation)
 * [Technologies](#technologies)
-* [Future Development](#future-development)
+
 * [Credits](#credits)
 
 ## Description
 
 description
 
-## Deployed Site
 
-Follow this [link](undefined) to view and use our site!
 
 ## Features
 
-// loop
-undefined
+feature 1
 
 <p align="center">
-<img alt="undefined" src="./dist/images/undefined"/>
-</p>    
-// end loop
+<img alt="blah" src="./dist/images/blah"/>
+</p>
+feature 2
+
 
 ## Installation
 
-installation instructions
+install
 
 ## Technologies
 
+- HTML
+- CSS
 - JavaScript
-- Node.js
-- npm
 
 
-## Future Development
-
-In the future, I would like to add the following improvements:
-
-- future feature 1
-- future feature 2
 
 
 I'm always interested in refactoring code to improve it's functionality. If you would like to suggest your own improvements, you can reach our development team at the links below.
 
-- <a href="mailto:ashlynn4567@gmail.com">Email</a>
-- <a href="https://github.com/ashlynn4567">GitHub</a>
-- <a href="https://www.linkedin.com/in/ashley-lynn-smith/">LinkedIn</a>
+- <a href="mailto:blah">Email</a>
+- <a href="https://github.com/blah">GitHub</a>
+- <a href="blah">LinkedIn</a>
 
 ## Credits
 

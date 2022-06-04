@@ -45,38 +45,39 @@ async function init() {
     //         prompts.creditSection
     //     ),
     // };
+    // console.log(userInput);
     // return userInput;
+
+    // TODO: remove dummyData when done running mocks
     let dummyData = {
         title: 'title',
         description: 'description',
         confirmDeployedSite: false,
+        // TODO: figure out why this is disappearing
+        // confirmFeature: true,
         features: [
           {
-            featureDescription: 'feature description 1',
-            confirmImage: false,
+            featureDescription: 'feature 1',
+            confirmImage: true,
+            featureImgAltText: 'blah',
+            featureImgFileName: 'blah',
             addEntry: true
           },
           {
-            featureDescription: 'feature description 2',
-            confirmImage: false,
-            addEntry: true
-          },
-          {
-            featureDescription: 'future description 3',
+            featureDescription: 'feature 2',
             confirmImage: false,
             addEntry: false
           }
         ],
         confirmInstallation: true,
-        installation: 'installation instructions',
-        technologiesChoice: [ 'JavaScript', 'Node.js', 'npm' ],
-        'future development': [
-          { futureFeature: 'future feature 1', addEntry: true },
-          { futureFeature: 'future feature 2', addEntry: false }
-        ],
-        email: 'ashlynn4567@gmail.com',
-        githubUsername: 'ashlynn4567',
-        linkedInProfile: 'https://www.linkedin.com/in/ashley-lynn-smith/',
+        installation: 'install',
+        technologiesChoice: [ 'HTML', 'CSS', 'JavaScript' ],
+        // TODO: figure out why this is disappearing
+        // confirmFuture: true,
+        'future development': [ { futureFeature: 'future dev 1 ', addEntry: false } ],
+        email: 'blah',
+        githubUsername: 'blah',
+        linkedInProfile: 'blah',
         license: 'MIT'
       }
     return dummyData;

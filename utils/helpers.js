@@ -91,25 +91,42 @@ const licences = {
     }
 };
 
-// Create a function that returns a license badge based on which license is passed in. If there is no license, return an empty string */
+// Create a function that returns a license badge based on which license is passed in
 function renderLicenseBadge(license) {
     if (license) {
         return licences[license].badge;
-    } else {
-       return ""; 
     };
 };
   
-// Create a function that returns the license link. If there is no license, return an empty string
+// Create a function that returns the license link
 function renderLicenseLink(license) {
     return `[${license}](${licences[license].link})`;
 };
-  
-// Create a function that returns the techology section of README
-// If there is no techology section, return an empty string
-function renderChoices(choiceArr) {
+
+// Create a function that loops through iterations within features section of README
+function renderFeatures(choiceArr) {
     let response = "";
-    if (choiceArr.length > 1) {
+    if (choiceArr.length >= 1) {
+        choiceArr.forEach(choice => {
+            if (choice.confirmImage) {
+                response = response.concat(
+                    // TODO: potentially fix this weird formatting
+                    `${choice.featureDescription}\n
+<p align="center">
+<img alt="${choice.featureImgAltText}" src="./dist/images/${choice.featureImgFileName}"/>
+</p>\n`);
+            } else {
+                response = response.concat(`${choice.featureDescription}\n`);
+            };
+        });
+    };
+    return response;
+};
+
+// Create a function that loops through iterations within technology section of README
+function renderTechnology(choiceArr) {
+    let response = "";
+    if (choiceArr.length >= 1) {
         choiceArr.forEach(choice => {
             response = response.concat(`- ${choice}\n`);
         });
@@ -123,5 +140,6 @@ module.exports = {
     inquirerHandler, 
     renderLicenseBadge,
     renderLicenseLink,
-    renderChoices
+    renderFeatures,
+    renderTechnology
 };

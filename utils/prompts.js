@@ -59,7 +59,7 @@ module.exports = {
         // features section confirm
         {
             type: "confirm",
-            name: "enterMultiples",
+            name: "confirmFeature",
             message: "Do you want to showcase a feature of your application in a 'Features' section?",
             default: true
         }
@@ -177,7 +177,7 @@ module.exports = {
     futureSection: [
         {
             type: "confirm",
-            name: "enterMultiples",
+            name: "confirmFuture",
             message: "Do you want to include a 'Future Development' section to showcase suggestions for future improvement of this application?",
             default: true
         }

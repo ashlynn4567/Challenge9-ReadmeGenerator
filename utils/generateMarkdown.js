@@ -10,44 +10,38 @@ ${helpers.renderLicenseBadge(data.license)}
 ## Table-of-Contents
 
 * [Description](#description)
-* [Deployed Site](#deployed-site)
-* [Features](#features)
-* [Installation](#installation)
-* [Technologies](#technologies)
-* [Future Development](#future-development)
+${data.confirmDeployedSite ? `* [Deployed Site](#deployed-site)` : ""}
+${(data.confirmFeature) ? `* [Features](#features)` :  ""}
+${data.confirmInstallation ? `* [Installation](#installation)` : ""}
+${(data.technologiesChoice.length >= 1) ? `* [Technologies](#technologies)` : ""}
+${data.confirmFuture ? `* [Future Development](#future-development)` : "" }
 * [Credits](#credits)
 
 ## Description
 
 ${data.description}
 
-## Deployed Site
+${data.confirmDeployedSite ? `## Deployed Site
 
-Follow this [link](${data.deployedSite}) to view and use our site!
+Follow [this link](${data.deployedSite}) to view and use our site!` : ""}
 
-## Features
+${data.confirmFeature ? `## Features
 
-// loop
-${data.featureDescription}
+${helpers.renderFeatures(data.features)}` : ""}
 
-<p align="center">
-<img alt="${data.featureImgAltText}" src="./dist/images/${data.featureImgFileName}"/>
-</p>    
-// end loop
+${data.confirmInstallation ? `## Installation
 
-## Installation
+${data.installation}` : ""}
 
-${data.installation}
+${(data.technologiesChoice.length >= 1) ? `## Technologies
 
-## Technologies
+${helpers.renderTechnology(data.technologiesChoice)}` : ""}
 
-${helpers.renderChoices(data.technologiesChoice)}
-
-## Future Development
+${data.confirmFuture ? `## Future Development
 
 In the future, I would like to add the following improvements:
 
-${helpers.renderChoices(data["future development"].map((item) => item.futureFeature))}
+${helpers.renderTechnology(data["future development"].map((item) => item.futureFeature))}` : "" }
 
 I'm always interested in refactoring code to improve it's functionality. If you would like to suggest your own improvements, you can reach our development team at the links below.
 
