@@ -3,63 +3,65 @@ const helpers = require("./helpers");
 // Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
-  # ${data.title}
+# ${data.title}
 
-  ${helpers.renderLicenseBadge(data.license)}
+${helpers.renderLicenseBadge(data.license)}
 
-  ## Table-of-Contents
+## Table-of-Contents
 
-  * [Description](#description)
-  * [Deployed Site](#deployed-site)
-  * [Features](#usage-and-features)
-  * [Installation](#installation)
-  * [Technologies and Languages](#technologies-and-languages)
-  * [Future Development](#future-development)
-  * [Credits](#credits)
+* [Description](#description)
+* [Deployed Site](#deployed-site)
+* [Features](#features)
+* [Installation](#installation)
+* [Technologies](#technologies)
+* [Future Development](#future-development)
+* [Credits](#credits)
 
-  ## Description
+## Description
 
-  ${data.description}
+${data.description}
 
-  ## Deployed Site
+## Deployed Site
 
-  Follow this [link](${data.deployedSite}) to view and use our site!
+Follow this [link](${data.deployedSite}) to view and use our site!
 
-  ## Features
+## Features
 
-  // loop
-  ${data.featureDescription}
+// loop
+${data.featureDescription}
 
-  <p align="center">
-  <img alt="${data.featureImgAltText}" src="./dist/images/${data.featureImgFileName}"/>
-  </p>    
-  // end loop
+<p align="center">
+<img alt="${data.featureImgAltText}" src="./dist/images/${data.featureImgFileName}"/>
+</p>    
+// end loop
 
-  ## Installation
+## Installation
 
-  ${data.installation}
+${data.installation}
 
-  ${helpers.renderTechologySection(data.technologiesChoice)}
+## Technologies
 
-  ## Future Development
+${helpers.renderChoices(data.technologiesChoice)}
 
-  In the future, I would like to add the following improvements:
+## Future Development
 
-  // loop
-  - ${data.suggestedFeature}
-  // end loop
+In the future, I would like to add the following improvements:
 
-  I'm always interested in refactoring code to improve it's functionality. If you would like to suggest your own improvements, you can reach our development team at the links below.
+${helpers.renderChoices(data["future development"].map((item) => item.futureFeature))}
 
-  - <a href="mailto:${data.email}">Email</a>
-  - <a href="https://github.com/${data.githubUsername}">GitHub</a>
-  - <a href="${data.linkedInProfile}">LinkedIn</a>
+I'm always interested in refactoring code to improve it's functionality. If you would like to suggest your own improvements, you can reach our development team at the links below.
 
-  ## Credits
+- <a href="mailto:${data.email}">Email</a>
+- <a href="https://github.com/${data.githubUsername}">GitHub</a>
+- <a href="${data.linkedInProfile}">LinkedIn</a>
 
-  This project was built with the help of the University of Oregon's Coding Boot Camp.
+## Credits
 
-  ${helpers.renderLicenseSection(data.license)}`;
+This project was built with the help of the University of Oregon's Coding Boot Camp.
+
+## Licensing
+
+The application is covered under the following license: ${helpers.renderLicenseLink(data.license)}`;
 };
 
 module.exports = generateMarkdown;

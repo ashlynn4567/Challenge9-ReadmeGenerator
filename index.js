@@ -47,54 +47,38 @@ async function init() {
     // };
     // return userInput;
     let dummyData = {
-        title: 'README Generator',
-        description: 'This is my ninth challenge assignment for the University of Oregon Coding Bootcamp 2022. The challenge is to create an application using Node.js that gathers user input to generate a professional README for their GitHub Repository.',
+        title: 'title',
+        description: 'description',
         confirmDeployedSite: false,
         features: [
-            { 
-                featureDescription: 'With this tool, users can easily generate a README file to use in their repository just by answering a series of prompts in the command line.', 
-                confirmImage: false, 
-                addEntry: true 
-            },
-            { 
-                featureDescription: 'blah', 
-                confirmImage: false, 
-                addEntry: true 
-            },
-            {
-                featureDescription: 'blah',
-                confirmImage: true,
-                featureImgAltText: 'blah',
-                featureImgFileName: 'blah',
-                addEntry: false
-            }
+          {
+            featureDescription: 'feature description 1',
+            confirmImage: false,
+            addEntry: true
+          },
+          {
+            featureDescription: 'feature description 2',
+            confirmImage: false,
+            addEntry: true
+          },
+          {
+            featureDescription: 'future description 3',
+            confirmImage: false,
+            addEntry: false
+          }
         ],
         confirmInstallation: true,
-        installation: 'blah',
-        technologiesChoice: [
-            'JavaScript',
-            'Node.js',
-            'npm'
-        ],
-        'future development': [ 
-            { 
-                suggestedFeature: 'blah', 
-                addEntry: true 
-            },
-            { 
-                suggestedFeature: 'blah', 
-                addEntry: true 
-            }, 
-            { 
-                suggestedFeature: 'blah', 
-                addEntry: false 
-            }
+        installation: 'installation instructions',
+        technologiesChoice: [ 'JavaScript', 'Node.js', 'npm' ],
+        'future development': [
+          { futureFeature: 'future feature 1', addEntry: true },
+          { futureFeature: 'future feature 2', addEntry: false }
         ],
         email: 'ashlynn4567@gmail.com',
         githubUsername: 'ashlynn4567',
         linkedInProfile: 'https://www.linkedin.com/in/ashley-lynn-smith/',
         license: 'MIT'
-    }
+      }
     return dummyData;
 };
 

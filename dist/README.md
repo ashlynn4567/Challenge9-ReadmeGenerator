@@ -1,66 +1,65 @@
 
-  # README Generator
+# title
 
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-  ## Table-of-Contents
+## Table-of-Contents
 
-  * [Description](#description)
-  * [Deployed Site](#deployed-site)
-  * [Features](#usage-and-features)
-  * [Installation](#installation)
-  * [Technologies and Languages](#technologies-and-languages)
-  * [Future Development](#future-development)
-  * [Credits](#credits)
+* [Description](#description)
+* [Deployed Site](#deployed-site)
+* [Features](#features)
+* [Installation](#installation)
+* [Technologies](#technologies)
+* [Future Development](#future-development)
+* [Credits](#credits)
 
-  ## Description
+## Description
 
-  This is my ninth challenge assignment for the University of Oregon Coding Bootcamp 2022. The challenge is to create an application using Node.js that gathers user input to generate a professional README for their GitHub Repository.
+description
 
-  ## Deployed Site
+## Deployed Site
 
-  Follow this [link](undefined) to view and use our site!
+Follow this [link](undefined) to view and use our site!
 
-  ## Features
+## Features
 
-  // loop
-  undefined
+// loop
+undefined
 
-  <p align="center">
-  <img alt="undefined" src="./dist/images/undefined"/>
-  </p>    
-  // end loop
+<p align="center">
+<img alt="undefined" src="./dist/images/undefined"/>
+</p>    
+// end loop
 
-  ## Installation
+## Installation
 
-  blah
+installation instructions
 
-  
-        ## Technologies and Languages
+## Technologies
 
-        - [JavaScript,Node.js,npm]()
-        
+- JavaScript
+- Node.js
+- npm
 
-  ## Future Development
 
-  In the future, I would like to add the following improvements:
+## Future Development
 
-  // loop
-  - undefined
-  // end loop
+In the future, I would like to add the following improvements:
 
-  I'm always interested in refactoring code to improve it's functionality. If you would like to suggest your own improvements, you can reach our development team at the links below.
+- future feature 1
+- future feature 2
 
-  - <a href="mailto:ashlynn4567@gmail.com">Email</a>
-  - <a href="https://github.com/ashlynn4567">GitHub</a>
-  - <a href="https://www.linkedin.com/in/ashley-lynn-smith/">LinkedIn</a>
 
-  ## Credits
+I'm always interested in refactoring code to improve it's functionality. If you would like to suggest your own improvements, you can reach our development team at the links below.
 
-  This project was built with the help of the University of Oregon's Coding Boot Camp.
+- <a href="mailto:ashlynn4567@gmail.com">Email</a>
+- <a href="https://github.com/ashlynn4567">GitHub</a>
+- <a href="https://www.linkedin.com/in/ashley-lynn-smith/">LinkedIn</a>
 
-  
-    ## Licensing 
+## Credits
 
-    The application is covered under the following license: [MIT](https://opensource.org/licenses/MIT)
-        
+This project was built with the help of the University of Oregon's Coding Boot Camp.
+
+## Licensing
+
+The application is covered under the following license: [MIT](https://opensource.org/licenses/MIT)

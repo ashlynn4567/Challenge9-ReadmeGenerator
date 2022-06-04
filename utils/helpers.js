@@ -102,114 +102,19 @@ function renderLicenseBadge(license) {
   
 // Create a function that returns the license link. If there is no license, return an empty string
 function renderLicenseLink(license) {
-    if (license) {
-        return licences[license].link;
-    } else {
-       return "";
-    };
-};
-
-/* 
-
-    const licenses = {
-        "GNU AGPLv3": {
-            link: 'https://www.gnu.org/licenses/agpl-3.0',
-            badge: '[![License: GNU AGPLv3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)'
-        },
-        gnu_agpLv3: {
-
-        }
-
-        // ... repeat for all the licenses
-    }
-
-    licence["GNU APGLv3"].link
-    license["GNU APGLv3"].badge
-
-*/
-
-
-
-// Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {
-    if (license !== "") {
-        return `
-    ## Licensing 
-
-    The application is covered under the following license: [${license}](${renderLicenseLink(license)})
-        `;
-    } else {
-        return "";
-    };
+    return `[${license}](${licences[license].link})`;
 };
   
-// Create a function that returns the license link
-// If there is no license, return an empty string
-function renderTechologyLink(technologiesChoice) {
-    switch (technologiesChoice) {
-        case "HTML":
-        return `https://developer.mozilla.org/en-US/docs/Web/HTML`;
-        case "CSS":
-        return `https://developer.mozilla.org/en-US/docs/Web/CSS`;
-        case "JavaScript":
-        return `https://www.javascript.com/`;
-        case "Node.js":
-        return `https://nodejs.org/en/`;
-        case "npm":
-        return `https://www.npmjs.com/`;
-        case "Jest":
-        return `https://jestjs.io/`;
-        case "SQL":
-        return `https://www.mysql.com/downloads/`;
-        case "MySQL":
-        return `https://www.mysql.com/downloads/`;
-        case "Sequelize.js":
-        return `https://sequelize.org/`;
-        case "NoSQL":
-        return `https://en.wikipedia.org/wiki/NoSQL`;
-        case "MongoDB":
-        return `https://www.mongodb.com/`;
-        case "Mongoose.js":
-        return `https://mongoosejs.com/`;
-        case "Python":
-        return `https://www.python.org/`;
-        case "Java":
-        return `https://www.java.com/en/`;
-        case "C / C++":
-        return `https://www.cplusplus.com/`;
-        case "C#":
-        return `https://en.wikipedia.org/wiki/C_Sharp_(programming_language)`;
-        case "R":
-        return `https://www.r-project.org/`;
-        case "Ruby":
-        return `https://www.ruby-lang.org/en/`;
-        case "Go / Golang":
-        return `https://go.dev/`;
-        case "PHP":
-        return `https://www.php.net/`;
-        case "Swift":
-        return `https://www.swift.com/`;
-        case "Rust":
-        return `https://www.rust-lang.org/`;
-        case "Go":
-        return `https://www.boost.org/LICENSE_1_0.txt`;
-        default: return "";
+// Create a function that returns the techology section of README
+// If there is no techology section, return an empty string
+function renderChoices(choiceArr) {
+    let response = "";
+    if (choiceArr.length > 1) {
+        choiceArr.forEach(choice => {
+            response = response.concat(`- ${choice}\n`);
+        });
     };
-};
-  
-// Create a function that returns the techology and language section of README
-// If there is no techology and language section, return an empty string
-function renderTechologySection(technologiesChoice) {
-    if (technologiesChoice !== "None listed here") {
-        return `
-        ## Technologies and Languages
-
-        - [${technologiesChoice}](${renderTechologyLink(technologiesChoice)})
-        `;
-    } else {
-        return "";
-    };
+    return response;
 };
 
 module.exports = { 
@@ -217,6 +122,6 @@ module.exports = {
     askQuestions, 
     inquirerHandler, 
     renderLicenseBadge,
-    renderLicenseSection,
-    renderTechologySection
+    renderLicenseLink,
+    renderChoices
 };

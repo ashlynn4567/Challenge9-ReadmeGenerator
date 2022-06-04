@@ -139,9 +139,8 @@ module.exports = {
             // NOTE TODO: WANT TO MAKE THIS SO THAT USERS ARE ABLE TO SELECT MULTIPLE. THE FUNCTION IN GENERATEMARKDOWN.JS SHOULD ALSO RETURN MULTPLE ANSWERS
             type: "checkbox",
             name: "technologiesChoice",
-            message: "Select the tecnologies or languages you used for this project as applicable. (Required)",
+            message: "Select the technologies or languages you used for this project as applicable. (Required)",
             choices: [
-                "None listed here", 
                 "HTML",
                 "CSS",
                 "JavaScript", 
@@ -187,7 +186,7 @@ module.exports = {
         // future development section confirm
         {
             type: "input",
-            name: "suggestedFeature", 
+            name: "futureFeature", 
             message: "List a feature you would like to include in future development of this application. (Required)"
         },
     ],
@@ -208,7 +207,7 @@ module.exports = {
         {
             type: "input",
             name: "linkedInProfile",
-            message: "Please enter your GitHub Username for the contact information section."
+            message: "Please enter your LinkedIn link for the contact information section."
         },
         // licensing 
         {
