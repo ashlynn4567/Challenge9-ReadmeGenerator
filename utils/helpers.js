@@ -115,7 +115,8 @@ function renderFeatures(choiceArr) {
                     `${choice.featureDescription}\n
 <p align="center">
 <img alt="${choice.featureImgAltText}" src="./images/${choice.featureImgFileName}"/>
-</p>\n`);
+</p>\n
+`);
             } else {
                 response = response.concat(`${choice.featureDescription}\n`);
             };
