@@ -27,8 +27,10 @@ This application is run using the user's terminal. It is invoked using the comma
 For the README file to be generated, users must follow the prompts in the command line interface. This provides the application with information regarding their project, which will then be used to generate the README file. Once completed with the prompts, a markdown file will generate in `dist/README.md`.
 
 <p align="center">
-[insert video]
-<br>Here's an online <a href="https://drive.google.com/file/d/1sM7Iofh1z9Sq8Fl-C-DVO_5obSD6HvQg/view" target="_blank">link</a> to the video above.
+<a href="https://youtu.be/axO73hqslPs">
+<img alt="A video demonstrating the professional README generator prompts in the user's terminal. After the prompts are completed, a markdown file is generated in 'dist/README.md'." src="./images/readme-generator-demo-screenshot.jpg" />
+</a>
+<br>(Click the thumbnail above or this <a href="https://drive.google.com/file/d/1sM7Iofh1z9Sq8Fl-C-DVO_5obSD6HvQg/view" target="_blank">link</a> to view the demonstration video on YouTube.)
 </p>
 
 If users wish to include any pictures or gifs in their project, they need to specify the name of the image or gif file when prompted by the terminal questions. Once the markdown is generated, users will need to add their image files to the `dist/images/` directory, ensuring that the file name of their image matches what they entered in the prompts. It is also important to note that you must use single quotes instead of double quotes in the image section.
