@@ -114,7 +114,7 @@ function renderFeatures(choiceArr) {
                     // TODO: potentially fix this weird formatting
                     `${choice.featureDescription}\n
 <p align="center">
-<img alt="${choice.featureImgAltText}" src="./dist/images/${choice.featureImgFileName}"/>
+<img alt="${choice.featureImgAltText}" src="./images/${choice.featureImgFileName}"/>
 </p>\n`);
             } else {
                 response = response.concat(`${choice.featureDescription}\n`);
