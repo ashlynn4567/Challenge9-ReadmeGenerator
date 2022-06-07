@@ -1,5 +1,5 @@
 
-# title
+# Professional README Generator
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -10,43 +10,58 @@
 * [Features](#features)
 * [Installation](#installation)
 * [Technologies](#technologies)
-
+* [Future Development](#future-development)
 * [Credits](#credits)
 
 ## Description
 
-description
+This is my ninth challenge assignment for the University of Oregon Coding Bootcamp 2022. The challenge is to create an application using Node.js that gathers user input to generate a professional README for their GitHub Repository.
 
 
 
 ## Features
 
-feature 1
+This application is run using the user's terminal. It is invoked using the command `node index.js`, which will then begin to prompt the user for input regarding preferences for different sections of their README.
 
 <p align="center">
-<img alt="blah" src="./dist/images/blah"/>
+<img alt="A screenshot of the professional README generator running in the user's terminal." src="./dist/images/readme-generator-screenshot.jpg"/>
 </p>
-feature 2
+For the README file to be generated, users must follow the prompts in the command line interface. This provides the application with information regarding their project, which will then be used to generate the README file. Once completed with the prompts, a markdown file will generate in `dist/README.md`. 
+
+<p align="center">
+<img alt="A gif showing the professional README generator prompts in the user's terminal. After the prompts are completed, a markdown file is generated in "dist/README.md"." src="./dist/images/readme-generator-demo.gif"/>
+</p>
+If users wish to include any pictures or gifs in their project, they need to specify the name of the image or gif file when prompted by the terminal questions. Once the markdown is generated, users will need to add their image files to the `dist/images/` directory, ensuring that the file name of their image matches what they entered in the prompts. 
+
+<p align="center">
+<img alt="A screenshot showing to include the image files in the "dist/images/" directory." src="./dist/images/readme-generator-image-screenshot.jpg"/>
+</p>
 
 
 ## Installation
 
-install
+1. Open the command line interface.
 
 ## Technologies
 
-- HTML
-- CSS
 - JavaScript
+- Node.js
+- npm
 
 
+## Future Development
+
+In the future, I would like to add the following improvements:
+
+- I would like to update the "installation section" prompt so that it generates a list of installation steps more easily, rather than users having to type in a paragraph-type format.
+- I would like to somehow add a more streamlined way of adding image or gif files to the project rather than the user having to manually add their images to the `dist/images/` directory every time. 
 
 
 I'm always interested in refactoring code to improve it's functionality. If you would like to suggest your own improvements, you can reach our development team at the links below.
 
-- <a href="mailto:blah">Email</a>
-- <a href="https://github.com/blah">GitHub</a>
-- <a href="blah">LinkedIn</a>
+- <a href="mailto:ashlynn4567@gmail.com">Email</a>
+- <a href="https://github.com/ashlynn4567">GitHub</a>
+- <a href="www.linkedin.com/in/Ashley-Lynn-Smith">LinkedIn</a>
 
 ## Credits
 

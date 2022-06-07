@@ -14,7 +14,7 @@ async function askQuestions (title = "", prompts = [], multiplePrompts = []) {
             let answers = { ...response };
 
             // only enter if "enterMultiples" question is true AND multiplePrompts.length > 0
-            if (response.enterMultiples && multiplePrompts.length > 0) {
+            if ((response.confirmFeature || response.confirmFuture) && multiplePrompts.length > 0) {
                 let loop = true;
                 // set list of answers from multiple prompts to empty
                 let list = [];
@@ -44,6 +44,7 @@ async function askQuestions (title = "", prompts = [], multiplePrompts = []) {
 
                 // once all answers have been gathered, return object
                 answers = {
+                    ...answers, 
                     [title]: list
                 };
             };
