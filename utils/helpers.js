@@ -14,7 +14,7 @@ async function askQuestions (title = "", prompts = [], multiplePrompts = []) {
             let answers = { ...response };
 
             // only enter if "enterMultiples" question is true AND multiplePrompts.length > 0
-            if ((response.confirmFeature || response.confirmFuture) && multiplePrompts.length > 0) {
+            if ((response.confirmFeature || response.confirmFuture || response.confirmInstallation) && multiplePrompts.length > 0) {
                 let loop = true;
                 // set list of answers from multiple prompts to empty
                 let list = [];
@@ -124,8 +124,18 @@ function renderFeatures(choiceArr) {
     return response;
 };
 
+function renderOrderedList(choiceArr) {
+    let response = "";
+    if (choiceArr.length >= 1) {
+        choiceArr.forEach((choice, i) => {
+            response = response.concat(`${i + 1}. ${choice}\n`);
+        });
+    };
+    return response;
+};
+
 // Create a function that loops through iterations within technology section of README
-function renderTechnology(choiceArr) {
+function renderUnorderedList(choiceArr) {
     let response = "";
     if (choiceArr.length >= 1) {
         choiceArr.forEach(choice => {
@@ -142,5 +152,6 @@ module.exports = {
     renderLicenseBadge,
     renderLicenseLink,
     renderFeatures,
-    renderTechnology
+    renderOrderedList,
+    renderUnorderedList
 };

@@ -116,10 +116,11 @@ module.exports = {
             name: "confirmInstallation",
             message: "Do you want to include instructions on how to install your application in an 'Installation' section?",
             default: true
-        },
+        }
+    ], 
+    installationQuestions: [
         // installation instructions
         {
-            when: ({ confirmInstallation }) => confirmInstallation,
             type: "input",
             name: "installation", 
             message: "What are the steps required to install your project? (Required)",

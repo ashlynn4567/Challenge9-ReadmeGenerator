@@ -26,7 +26,8 @@ async function init() {
         // installation section
         ...await helpers.askQuestions(
             "installation",
-            prompts.installationSection
+            prompts.installationSection,
+            prompts.installationQuestions
         ),
         // technology section
         ...await helpers.askQuestions(

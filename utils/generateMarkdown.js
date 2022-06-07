@@ -31,17 +31,17 @@ ${helpers.renderFeatures(data.features)}` : ""}
 
 ${data.confirmInstallation ? `## Installation
 
-${data.installation}` : ""}
+${helpers.renderOrderedList(data["installation"].map((item) => item.installation))}` : "" }
 
 ${(data.technologiesChoice.length >= 1) ? `## Technologies
 
-${helpers.renderTechnology(data.technologiesChoice)}` : ""}
+${helpers.renderUnorderedList(data.technologiesChoice)}` : ""}
 
 ${data.confirmFuture ? `## Future Development
 
 In the future, I would like to add the following improvements:
 
-${helpers.renderTechnology(data["future development"].map((item) => item.futureFeature))}` : "" }
+${helpers.renderUnorderedList(data["future development"].map((item) => item.futureFeature))}` : "" }
 
 I'm always interested in refactoring code to improve it's functionality. If you would like to suggest your own improvements, you can reach our development team at the links below.
 
