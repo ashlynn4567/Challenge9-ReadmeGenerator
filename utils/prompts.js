@@ -123,7 +123,7 @@ module.exports = {
         {
             type: "input",
             name: "installation", 
-            message: "What are the steps required to install your project? (Required)",
+            message: "Please list a step required to install your project. You have the option to add additonal steps later. (Required)",
             validate: (installation) => {
                 if (installation) {
                     return true;
