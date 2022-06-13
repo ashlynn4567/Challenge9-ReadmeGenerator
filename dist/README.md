@@ -24,6 +24,15 @@ This application is run using the user's terminal. It is invoked using the comma
 <img alt="A screenshot of the professional README generator running in the user's terminal." src="./images/readme-generator-screenshot.jpg"/>
 </p>
 
+For the README file to be generated, users must follow the prompts in the command line interface. This provides the application with information regarding their project, which will then be used to generate the README file. Once completed with the prompts, a markdown file will generate in `dist/README.md`.
+
+<p align="center">
+<a href="https://youtu.be/axO73hqslPs">
+<img alt="A video demonstrating the professional README generator prompts in the user's terminal. After the prompts are completed, a markdown file is generated in 'dist/README.md'." src="./images/readme-generator-demo-screenshot.jpg" />
+</a>
+<br>(Click the thumbnail above or this <a href="https://drive.google.com/file/d/1sM7Iofh1z9Sq8Fl-C-DVO_5obSD6HvQg/view" target="_blank">link</a> to view the demonstration video on YouTube.)
+</p>
+
 If users wish to include any pictures or gifs in their project, they need to specify the name of the image or gif file when prompted by the terminal questions. Once the markdown is generated, users will need to add their image files to the `dist/images/` directory, ensuring that the file name of their image matches what they entered in the prompts. It is also important to note that you must use single quotes instead of double quotes in the image section.
 
 <p align="center">
@@ -35,7 +44,7 @@ If users wish to include any pictures or gifs in their project, they need to spe
 1. Open the command line interface.
 2. Clone the repository onto your local machine using the `git clone` command.
 3. Once the repository has been cloned, navigate into the root direcotry of the application using the command `cd Readme-Generator`.
-4. Run the command npm install to install necessary packages and dependencies.
+4. Run the command `npm install` to install necessary packages and dependencies.
 5. Once the dependencies have been properly installed, enter the command `node index.js` to initiate the application.
 6. Navigate through the prompts in your command line interface using your keyboard.
 7. If you entered "y" to any of the prompts regarding adding images or gifs to your readme, you will need to manually add those image files to `dist/images/`, ensuring that the name of the image entered in the prompts matches the name of the image file.

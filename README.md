@@ -44,7 +44,7 @@ If users wish to include any pictures or gifs in their project, they need to spe
 1. Open the command line interface.
 2. Clone the repository onto your local machine using the `git clone` command.
 3. Once the repository has been cloned, navigate into the root direcotry of the application using the command `cd Readme-Generator`.
-4. Run the command npm install to install necessary packages and dependencies.
+4. Run the command `npm install` to install necessary packages and dependencies.
 5. Once the dependencies have been properly installed, enter the command `node index.js` to initiate the application.
 6. Navigate through the prompts in your command line interface using your keyboard.
 7. If you entered "y" to any of the prompts regarding adding images or gifs to your readme, you will need to manually add those image files to `dist/images/`, ensuring that the name of the image entered in the prompts matches the name of the image file.

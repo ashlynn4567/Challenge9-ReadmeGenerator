@@ -111,10 +111,9 @@ function renderFeatures(choiceArr) {
         choiceArr.forEach(choice => {
             if (choice.confirmImage) {
                 response = response.concat(
-                    // TODO: potentially fix this weird formatting
                     `${choice.featureDescription}\n
 <p align="center">
-<img alt="${choice.featureImgAltText}" src="./images/${choice.featureImgFileName}"/>
+<img alt="${choice.featureImgAltText}" src="./assets/images/${choice.featureImgFileName}"/>
 </p>\n
 `);
             } else {
