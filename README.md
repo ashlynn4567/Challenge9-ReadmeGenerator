@@ -61,7 +61,7 @@ In the future, I would like to add the following improvements:
 
 - I would like to somehow add a more streamlined way of adding image or gif files to the project rather than the user having to manually add their images to the `dist/images/` directory every time.
 
-I'm always interested in refactoring code to improve it's functionality. If you would like to suggest your own improvements, you can reach our development team at the links below.
+I'm always interested in refactoring code to improve it's functionality. If you would like to suggest your own improvements, you can reach me at the links below.
 
 - <a href="mailto:ashlynn4567@gmail.com">Email</a>
 - <a href="https://github.com/ashlynn4567">GitHub</a>
